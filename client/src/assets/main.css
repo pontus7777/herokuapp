@@ -1,0 +1,62 @@
+@import "./base.css";
+/* Importing base styles for global theme */
+
+/* App container */
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: var(--color-background-soft);
+  box-sizing: border-box;
+  /* Ensures padding does not affect width/height calculations */
+}
+
+/* Center the content vertically with some spacing */
+.content {
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: var(--section-gap);
+}
+
+.content h2 {
+  font-size: 2rem;
+  color: var(--vt-c-gold);
+  /* Using gold accent for the section title */
+  margin-bottom: 30px;
+}
+
+/* Footer Styles */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--vt-c-black-mute);
+  color: var(--vt-c-text-dark-2);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Add some responsive design */
+@media (max-width: 768px) {
+  .hero-cards {
+    justify-content: center;
+    /* Center the hero cards on smaller screens */
+  }
+
+  .hero-card {
+    width: 200px;
+    /* Reduce card width on smaller screens */
+  }
+
+  .content {
+    padding: 30px 20px;
+    /* Adjust padding for smaller screens */
+  }
+}

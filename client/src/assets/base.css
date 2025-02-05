@@ -1,0 +1,135 @@
+/* base.css */
+
+/* Root color variables */
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-black: #181818;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #2b2b2b;
+  --vt-c-red: #c91c22;
+  /* Dota 2 Red */
+  --vt-c-gold: #f4a261;
+  /* Gold accents */
+  --vt-c-gray: #606060;
+  /* Subtle Gray for borders */
+  --vt-c-text-light-1: #e0e0e0;
+  /* Light gray text */
+  --vt-c-text-light-2: rgba(255, 255, 255, 0.7);
+  /* Lighter text */
+  --vt-c-text-dark-1: #eeeeee;
+  /* Lighter text on dark */
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --color-background: var(--vt-c-black);
+  --color-background-soft: var(--vt-c-black-soft);
+  --color-background-mute: var(--vt-c-black-mute);
+  --color-border: var(--vt-c-gray);
+  --color-border-hover: var(--vt-c-red);
+  --color-heading: var(--vt-c-red);
+  --color-text: var(--vt-c-text-light-1);
+  --color-link: var(--vt-c-red);
+  --section-gap: 160px;
+  --font-family: 'Roboto', sans-serif;
+}
+
+/* Global reset and typography */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: color 0.5s, background-color 0.5s ease;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--vt-c-red);
+  /* Dota 2 Red */
+  color: var(--vt-c-white);
+  border-bottom: 4px solid var(--vt-c-black-soft);
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Logo Styling */
+.logo img {
+  width: 120px;
+  margin-top: 20px;
+}
+
+/* Hero Cards Section */
+.content {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 2rem;
+  color: var(--vt-c-gold);
+  /* Gold accent for the section title */
+  margin-bottom: 30px;
+}
+
+/* Hero Cards Container */
+.hero-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.hero-card {
+  background-color: var(--vt-c-black-soft);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 250px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid var(--vt-c-black-mute);
+}
+
+.hero-card p {
+  padding: 10px;
+  font-size: 1.1rem;
+  background: var(--vt-c-black);
+  color: var(--vt-c-text-light-1);
+  font-weight: bold;
+}
+
+.hero-card:hover {
+  background-color: var(--vt-c-black-mute);
+  transform: scale(1.05);
+}
+
+/* Footer Styles */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--vt-c-black-mute);
+  color: var(--vt-c-text-dark-2);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
