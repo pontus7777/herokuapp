@@ -1,0 +1,22 @@
+{
+  "name": "herokuapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "build": "cd ../frontend && npm install && npm run build && cd ../backend && npm install && tsc",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pontus7777/herokuapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pontus7777/herokuapp/issues"
+  },
+  "homepage": "https://github.com/pontus7777/herokuapp#readme",
+  "description": ""
+}
