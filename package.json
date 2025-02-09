@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node dist/server.js",
     "build": "cd frontend && npm install && npm run build && cd ../backend && npm install && tsc",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "cd frontend && npm install && npm run build && cd ../backend && npm install && tsc"
   },
   "repository": {
     "type": "git",
