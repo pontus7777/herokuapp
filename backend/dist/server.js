@@ -20,12 +20,10 @@ const app = (0, express_1.default)();
 const PORT = 5000;
 // Middleware
 app.use(express_1.default.json());
-// CORS setup to allow requests from frontend
 app.use((0, cors_1.default)({
-    origin: "*", // Ensure this matches your Vite dev server URL
-    credentials: true, // Allow cookies to be sent
+    origin: "*",
+    credentials: true,
 }));
-// Express middleware for sessions
 app.use((0, express_session_1.default)({
     secret: process.env.SESSION_SECRET || "your secret",
     resave: true,
@@ -33,16 +31,10 @@ app.use((0, express_session_1.default)({
 }));
 app.use(passport_1.default.initialize());
 app.use(passport_1.default.session());
-// Register authentication routes
 app.use("/api/v1/steam", steamRoutes_1.default);
 app.use("/api/v1/", openDotaRoutes_1.default);
 app.use("/api/v1/", mongoDbRoutes_1.default);
-app.get("/api/test", (req, res) => {
-    res.json({ message: "Api hello" });
-});
-// Serve static files from the frontend's dist directory
 app.use(express_1.default.static(path_1.default.join("../frontend/dist")));
-// Handle serving the Vue app (index.html) as a fallback for all routes
 app.get("/*", (req, res) => {
     res.sendFile(path_1.default.resolve("../frontend/dist/index.html"), (err) => {
         if (err) {
@@ -62,6 +54,5 @@ const server = app.listen(PORT, () => {
     console.log(`API docs available at http://localhost:${enviroment_1.CONFIG.PORT}/api-docs`);
 });
 exports.server = server;
-// Export the app instance for testing purposes
 exports.default = app;
 //# sourceMappingURL=server.js.map
